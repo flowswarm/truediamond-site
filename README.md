@@ -61,20 +61,18 @@ relative, but a local server is closer to how it will behave when hosted.)
 ## Forms (email delivery)
 
 All forms (consultation, contact, sidebar "Stay in Touch") send to **owner@truediamondlcg.com**
-through FormSubmit (https://formsubmit.co) — a free relay for static sites, no account needed.
+through Web3Forms (https://web3forms.com) — a free relay for static sites. The access key in
+`WEB3FORMS_ACCESS_KEY` (top of `build.py`) is tied to that address; there is no activation link.
 
-One-time activation: the FIRST time a form is submitted, FormSubmit emails
-owner@truediamondlcg.com an "Activate form" link. Click it once and every submission after
-that is delivered as a tidy table (name, email, phone, message, which page it came from).
-Replies go straight to the visitor's email address.
+Submissions arrive as an email with the visitor's name, email, phone, message and which page
+they were on. Replying in the inbox goes to the visitor.
 
 Notes:
-- Forms submit in the background and show a thank-you message on the page. Submissions only
-  work when the site is served over http(s) (localhost server or live hosting), not when the
-  HTML is opened directly as a file:// path.
-- To change the destination address, edit `email` in `BIZ` at the top of `build.py` and re-run it.
-- To re-enable FormSubmit's captcha, change `_captcha` to `true` in `form_hidden()` (then the
-  visitor is sent to a FormSubmit page to confirm instead of staying on the site).
+- Forms submit in the background and show a thank-you on the page; if that fails they fall back
+  to a regular post and Web3Forms redirects back to the page with `?sent=1`.
+- To change the destination address, create a new key for the new address at web3forms.com,
+  paste it into `WEB3FORMS_ACCESS_KEY`, and re-run `build.py`.
+- Free tier: 250 submissions/month, which is plenty for a referral site.
 
 ## Fonts
 

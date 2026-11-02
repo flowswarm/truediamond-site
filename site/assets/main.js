@@ -30,8 +30,8 @@
     });
   });
 
-  // Forms: submit to FormSubmit in the background, show the result inline.
-  // Emails go to the address in the form's action URL (owner@truediamondlcg.com).
+  // Forms: submit to Web3Forms in the background, show the result inline.
+  // Emails go to the address the access key was issued for (owner@truediamondlcg.com).
   document.querySelectorAll('form.js-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -42,24 +42,24 @@
       if (err) err.classList.remove('show');
       if (!form.checkValidity()) { form.reportValidity(); return; }
 
-      // Tell FormSubmit where to send the visitor back to after a regular (non-background) post.
-      var nextInput = form.querySelector('input[name="_next"]');
+      // Tell Web3Forms where to send the visitor back to after a regular (non-background) post.
+      var nextInput = form.querySelector('input[name="redirect"]');
       if (!nextInput) {
         nextInput = document.createElement('input');
-        nextInput.type = 'hidden'; nextInput.name = '_next';
+        nextInput.type = 'hidden'; nextInput.name = 'redirect';
         form.appendChild(nextInput);
       }
       nextInput.value = location.origin + location.pathname + '?sent=1#' + (form.closest('section') && form.closest('section').id ? form.closest('section').id : 'contact');
 
       var data = new FormData(form);
       data.append('page', document.title);
-      var ajaxUrl = form.getAttribute('action').replace('formsubmit.co/', 'formsubmit.co/ajax/');
+      var ajaxUrl = form.getAttribute('action');
       var label = btn ? btn.textContent : '';
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
       var fallback = function () {
         // Background send failed or timed out — do a regular form post instead so the
-        // message still goes through; FormSubmit redirects back here with ?sent=1.
+        // message still goes through; Web3Forms redirects back here with ?sent=1.
         if (location.protocol === 'file:') {
           if (err) err.classList.add('show');
           if (btn) { btn.disabled = false; btn.textContent = label; }
@@ -87,7 +87,7 @@
     });
   });
 
-  // Returned from a regular FormSubmit post (?sent=1): show the thank-you message.
+  // Returned from a regular Web3Forms post (?sent=1): show the thank-you message.
   if (/[?&]sent=1/.test(location.search)) {
     var target = null;
     if (location.hash) { var sec = document.querySelector(location.hash); if (sec) target = sec.querySelector('form.js-form'); }

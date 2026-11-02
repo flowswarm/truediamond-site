@@ -264,16 +264,19 @@ def founder_img(extra=""):
     return f'<img class="founder-img {extra}" src="assets/images/founder.png" alt="Diamond Foster, Founder of True Diamond Life Care Group" width="1374" height="1145">'
 
 
-FORM_ENDPOINT = f"https://formsubmit.co/{BIZ['email']}"
+# Web3Forms delivers submissions to the email the access key was created for
+# (owner@truediamondlcg.com). Get a key at https://web3forms.com — no account needed.
+WEB3FORMS_ACCESS_KEY = "PASTE_ACCESS_KEY_HERE"
+FORM_ENDPOINT = "https://api.web3forms.com/submit"
 
 
 def form_hidden(subject):
-    """Hidden fields FormSubmit reads: subject line, table layout, no redirect, spam honeypot."""
+    """Hidden fields Web3Forms reads: access key, subject line, sender name, spam honeypot."""
     return f"""
-    <input type="hidden" name="_subject" value="{subject}">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">"""
+    <input type="hidden" name="access_key" value="{WEB3FORMS_ACCESS_KEY}">
+    <input type="hidden" name="subject" value="{subject}">
+    <input type="hidden" name="from_name" value="True Diamond Website">
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">"""
 
 
 def form(heading="Request a Consultation", note=FORM_NOTE, compact=False, uid="f", subject="New Consultation Request — True Diamond website"):
