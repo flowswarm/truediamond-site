@@ -266,7 +266,7 @@ def founder_img(extra=""):
 
 # Web3Forms delivers submissions to the email the access key was created for
 # (owner@truediamondlcg.com). Get a key at https://web3forms.com — no account needed.
-WEB3FORMS_ACCESS_KEY = "PASTE_ACCESS_KEY_HERE"
+WEB3FORMS_ACCESS_KEY = "e3c2bf45-0c92-43a9-92f1-59910344c0c0"
 FORM_ENDPOINT = "https://api.web3forms.com/submit"
 
 
