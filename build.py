@@ -259,16 +259,17 @@ SERVICE_ALT = {
 }
 # Services that have a real photo instead of the drawn illustration: slug -> (file, alt text)
 SERVICE_PHOTO = {
-    "court-appointed-guardianship": ("service-court-appointed-guardianship.jpg", "Classical stone columns of a courthouse"),
-    "person-centered-advocacy": ("service-person-centered-advocacy.jpg", "A caregiver's hands gently supporting an older adult holding a cane"),
+    # slug: (file, alt text, crop focus as CSS object-position)
+    "court-appointed-guardianship": ("service-court-appointed-guardianship.jpg", "Classical stone columns of a courthouse", "50% 30%"),
+    "person-centered-advocacy": ("service-person-centered-advocacy.jpg", "A caregiver's hands gently supporting an older adult holding a cane", "50% 55%"),
+    "healthcare-decision-support": ("service-healthcare-decision-support.jpg", "An older woman's hands held reassuringly by a caregiver standing behind her", "50% 50%"),
 }
 
 
 def service_image(slug):
     if slug in SERVICE_PHOTO:
-        f, alt = SERVICE_PHOTO[slug]
-        pos = " service-photo--center" if slug == "person-centered-advocacy" else ""
-        return f'<img class="illus service-photo{pos}" src="assets/images/{f}" alt="{html.escape(alt)}" loading="lazy" decoding="async">'
+        f, alt, pos = SERVICE_PHOTO[slug]
+        return f'<img class="illus service-photo" src="assets/images/{f}" alt="{html.escape(alt)}" style="object-position:{pos}" loading="lazy" decoding="async">'
     return illus('service-' + slug, SERVICE_ALT[slug], 'illus--wide')
 
 
