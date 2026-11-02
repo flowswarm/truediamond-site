@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071527"/><stop offset=".55" stop-color="#0b1f3a"/><stop offset="1" stop-color="#163055"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#c9a84c" stop-opacity=".22"/><stop offset="1" stop-color="#c9a84c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3cf8f"/><stop offset="1" stop-color="#a8862f"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#f8f5ee" stroke-opacity=".04"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#grid)"/>
+  <!-- faint diamond watermark -->
+  <g transform="translate(650,870) scale(1.2)" fill="none" stroke="#c9a84c" stroke-opacity=".10" stroke-width="3">
+    <path d="M-60 -20 L-30 -60 L30 -60 L60 -20 L0 60 Z"/><path d="M-60 -20 H60 M-30 -60 L0 -20 L30 -60 M0 -20 V60"/>
+  </g>
+  <g fill="none" stroke="#e3cf8f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- older adult with cane -->
+    <g transform="translate(250,250)">    <g transform="translate(0,0) scale(0.95)" stroke="none" fill="#f8f5ee">
+      <circle cx="0" cy="34" r="34"/>
+      <path d="M-70 170 C-70 108 -38 84 0 84 C38 84 70 108 70 170 Z"/>
+    </g><path d="M95 150 L120 320" stroke-width="12"/><path d="M80 140 Q100 130 110 150" stroke-width="10"/></g>
+    <!-- person using wheelchair -->
+    <g transform="translate(560,300)">
+    <g transform="translate(0,0) scale(0.8)" stroke="none" fill="#f8f5ee">
+      <circle cx="0" cy="34" r="34"/>
+      <path d="M-70 170 C-70 108 -38 84 0 84 C38 84 70 108 70 170 Z"/>
+    </g>
+      <path d="M-40 136 V215 H60 L90 268" stroke-width="12"/>
+      <circle cx="0" cy="268" r="60"/>
+      <circle cx="0" cy="268" r="10" fill="#c9a84c" stroke="none"/>
+      <circle cx="92" cy="300" r="16"/>
+    </g>
+    <!-- adult (centre, lower) -->
+    <g transform="translate(400,560)">    <g transform="translate(0,0) scale(1.0)" stroke="none" fill="#f8f5ee">
+      <circle cx="0" cy="34" r="34"/>
+      <path d="M-70 170 C-70 108 -38 84 0 84 C38 84 70 108 70 170 Z"/>
+    </g></g>
+    <!-- professional with briefcase: courts, attorneys, families -->
+    <g transform="translate(150,600)">    <g transform="translate(0,0) scale(0.8)" stroke="none" fill="#e3cf8f">
+      <circle cx="0" cy="34" r="34"/>
+      <path d="M-70 170 C-70 108 -38 84 0 84 C38 84 70 108 70 170 Z"/>
+    </g><path d="M-110 300 H10 M-100 300 V240 H0 V300 M-50 240 V215" stroke-width="9"/></g>
+    <g transform="translate(650,600)">    <g transform="translate(0,0) scale(0.8)" stroke="none" fill="#e3cf8f">
+      <circle cx="0" cy="34" r="34"/>
+      <path d="M-70 170 C-70 108 -38 84 0 84 C38 84 70 108 70 170 Z"/>
+    </g>
+      <path d="M-20 240 H110 M-10 240 V200 M60 240 V200 M-20 270 H110 M-20 300 H110" stroke-width="7"/>
+    </g>
+    <!-- umbrella / arc of protection over everyone -->
+    <path d="M90 170 Q400 -40 710 170" stroke-width="12" stroke-opacity=".7"/>
+    <path d="M90 170 Q140 140 190 170 Q240 140 290 170 Q340 140 390 170 Q440 140 490 170 Q540 140 590 170 Q640 140 690 170" stroke-width="7" stroke-opacity=".5"/>
+
+  </g>
+</svg>

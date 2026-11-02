@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071527"/><stop offset=".55" stop-color="#0b1f3a"/><stop offset="1" stop-color="#163055"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#c9a84c" stop-opacity=".22"/><stop offset="1" stop-color="#c9a84c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3cf8f"/><stop offset="1" stop-color="#a8862f"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#f8f5ee" stroke-opacity=".04"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <!-- faint diamond watermark -->
+  <g transform="translate(1050,545) scale(1.2)" fill="none" stroke="#c9a84c" stroke-opacity=".10" stroke-width="3">
+    <path d="M-60 -20 L-30 -60 L30 -60 L60 -20 L0 60 Z"/><path d="M-60 -20 H60 M-30 -60 L0 -20 L30 -60 M0 -20 V60"/>
+  </g>
+  <circle cx="600.0" cy="337.5" r="229.50000000000003" fill="url(#halo)"/>
+  <circle cx="600.0" cy="337.5" r="270.0" fill="none" stroke="#c9a84c" stroke-opacity=".25" stroke-width="2"/>
+  <circle cx="600.0" cy="337.5" r="310.5" fill="none" stroke="#c9a84c" stroke-opacity=".12" stroke-width="2" stroke-dasharray="6 10"/>
+  <g fill="none" stroke="#e3cf8f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- calendar -->
+    <g transform="translate(220,170)">
+      <rect x="0" y="0" width="300" height="300" rx="16" fill="#163055" fill-opacity=".85"/>
+      <rect x="0" y="0" width="300" height="64" rx="16" fill="#c9a84c" stroke="none"/>
+      <path d="M70 -20 V40 M230 -20 V40" stroke="#0b1f3a" stroke-width="12"/>
+      <g stroke="none" fill="#f8f5ee" fill-opacity=".35">
+        <rect x="34" y="96" width="44" height="36" rx="6"/><rect x="104" y="96" width="44" height="36" rx="6"/><rect x="174" y="96" width="44" height="36" rx="6"/><rect x="244" y="96" width="30" height="36" rx="6"/>
+        <rect x="34" y="156" width="44" height="36" rx="6"/><rect x="104" y="156" width="44" height="36" rx="6"/><rect x="244" y="156" width="30" height="36" rx="6"/>
+        <rect x="34" y="216" width="44" height="36" rx="6"/><rect x="104" y="216" width="44" height="36" rx="6"/><rect x="174" y="216" width="44" height="36" rx="6"/>
+      </g>
+      <circle cx="196" cy="174" r="30" fill="#c9a84c" stroke="none"/>
+    <path transform="translate(196,174) scale(0.6)" d="M-34 4 L-8 30 L40 -28"/>
+    </g>
+    <!-- report stack -->
+    <path d="M640 230 H800 L840 270 V480 H640 Z" fill="#163055" fill-opacity=".7"/>
+    <path d="M800 230 V270 H840"/>
+    <path d="M670 290 H810" stroke-width="7" stroke-opacity=".8"/>
+    <path d="M670 320 H810" stroke-width="7" stroke-opacity=".8"/>
+    <path d="M670 350 H810" stroke-width="7" stroke-opacity=".8"/>
+    <path d="M670 380 H810" stroke-width="7" stroke-opacity=".8"/>
+    <path d="M670 410 H810" stroke-width="7" stroke-opacity=".8"/>
+
+    <path d="M620 260 V500 H820" stroke-opacity=".5"/>
+    <path d="M600 290 V520 H800" stroke-opacity=".3"/>
+    <!-- clock: deadlines -->
+    <g transform="translate(1000,260)">
+      <circle r="90" fill="#163055"/>
+      <path d="M0 -55 V0 L40 28"/>
+      <circle r="9" fill="#c9a84c" stroke="none"/>
+    </g>
+    <!-- checklist -->
+    <g transform="translate(930,470)">
+    <path transform="translate(0,0) scale(0.55)" d="M-34 4 L-8 30 L40 -28"/>      <path d="M40 0 H170" stroke-width="7"/>
+    <path transform="translate(0,55) scale(0.55)" d="M-34 4 L-8 30 L40 -28"/>      <path d="M40 55 H150" stroke-width="7"/>
+    <path transform="translate(0,110) scale(0.55)" d="M-34 4 L-8 30 L40 -28"/>      <path d="M40 110 H160" stroke-width="7"/>
+    </g>
+
+  </g>
+</svg>
