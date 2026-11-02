@@ -245,7 +245,7 @@ def placeholder(label, extra=""):
 
 
 def illus(name, alt, extra=""):
-    return f'<img class="illus {extra}" src="assets/images/illus/{name}.svg" alt="{html.escape(alt)}">'
+    return f'<img class="illus {extra}" src="assets/images/illus/{name}.svg" alt="{html.escape(alt)}" loading="lazy" decoding="async">'
 
 
 SERVICE_ALT = {
@@ -261,7 +261,10 @@ VALUE_ICONS = ["value-dignity", "value-rights", "value-ethics", "value-continuit
 
 
 def founder_img(extra=""):
-    return f'<img class="founder-img {extra}" src="assets/images/founder.png" alt="Diamond Foster, Founder of True Diamond Life Care Group" width="1374" height="1145">'
+    return (f'<img class="founder-img {extra}" src="assets/images/founder.jpg" '
+            f'srcset="assets/images/founder-800.jpg 800w, assets/images/founder.jpg 1374w" '
+            f'sizes="(max-width: 980px) 100vw, 40vw" '
+            f'alt="Diamond Foster, Founder of True Diamond Life Care Group" width="1374" height="1145" loading="lazy" decoding="async">')
 
 
 # Web3Forms delivers submissions to the email the access key was created for
@@ -325,7 +328,7 @@ def header():
 <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html" aria-label="{BIZ['name']} home">
-      <img class="brand-logo" src="assets/images/logo.png" alt="{BIZ['name']} logo" width="1254" height="1254">
+      <img class="brand-logo" src="assets/images/logo-160.png" srcset="assets/images/logo-160.png 1x, assets/images/logo-320.png 2x" alt="{BIZ['name']} logo" width="160" height="160">
       <span class="brand-text">
         <span class="brand-name">{BIZ['name']} LLC</span>
         <span class="brand-sub">Elevated Care &amp; Trusted Protection</span>
@@ -357,7 +360,6 @@ def header():
   </div>
 </header>
 <div class="badge-strip"><span class="star">★</span> Elevating the Standard of Care. Protecting What Matters Most. <span class="star">★</span></div>
-<div class="mobile-call"><a href="tel:{BIZ['phone_tel']}">Call Now • {BIZ['phone']}</a></div>
 """
 
 
@@ -382,7 +384,7 @@ def bottom_sections(include_contact=True):
   <div class="container">
     <h2>Our Professional Affiliations</h2>
     <div class="logo-row logo-row--3">
-      {''.join(f'<div class="affil"><img src="assets/images/{f}" alt="{n}"></div>' for f, n in AFFILIATIONS)}
+      {''.join(f'<div class="affil"><img src="assets/images/{f}" alt="{n}" loading="lazy" decoding="async"></div>' for f, n in AFFILIATIONS)}
     </div>
   </div>
 </section>
@@ -439,7 +441,7 @@ def footer():
   <div class="container">
     <div class="footer-main">
       <div class="footer-brand">
-        <a class="brand brand--footer" href="index.html"><img class="brand-logo brand-logo--lg" src="assets/images/logo.png" alt="{BIZ['name']} logo" width="1254" height="1254"></a>
+        <a class="brand brand--footer" href="index.html"><img class="brand-logo brand-logo--lg" src="assets/images/logo-320.png" alt="{BIZ['name']} logo" width="320" height="320" loading="lazy"></a>
         <p class="tag">Elevating the Standard of Care. Protecting What Matters Most.</p>
         <p class="serving-footer">{BIZ['serving']}</p>
         <h5>Address</h5><p>{BIZ['address']}</p>
@@ -485,6 +487,10 @@ def footer():
   </div>
 </footer>
 <a class="float-cta" href="contact.html">Request a Consultation</a>
+<div class="mobile-bar" role="navigation" aria-label="Quick actions">
+  <a class="btn btn--outline" href="tel:{BIZ['phone_tel']}">Call Now</a>
+  <a class="btn btn--gold" href="contact.html">Request a Consultation</a>
+</div>
 """
 
 
@@ -493,7 +499,8 @@ def page(filename, title, body, description=""):
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1f3a">
 <title>{html.escape(title)} | {BIZ['name']}</title>
 <meta name="description" content="{html.escape(description)}">
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -549,7 +556,7 @@ def service_sidebar(active_slug=None):
     <h3>Our Guardianship Services</h3>
     <ul class="side-nav">{links}</ul>
   </div>
-  <div class="side-card">
+  <div class="side-card side-card--newsletter">
     <h3>Stay in Touch</h3>
     <form class="js-form" action="{FORM_ENDPOINT}" method="POST">{form_hidden("Stay in Touch signup — True Diamond website")}
       <div class="form-grid">

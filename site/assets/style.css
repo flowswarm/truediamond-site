@@ -721,6 +721,8 @@ strong { color: var(--navy); }
 .site-footer h5 { color: var(--gold-soft); font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; margin: 14px 0 3px; }
 .site-footer a { color: #d9d4c7; }
 .site-footer a:hover { color: var(--gold-soft); }
+.site-footer .btn--gold, .contact-info .btn--gold { color: var(--navy-deep); }
+.site-footer .btn--gold:hover, .contact-info .btn--gold:hover { color: var(--white); }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin-bottom: 8px; }
 .site-footer p { margin-bottom: 0.4em; }
@@ -757,6 +759,22 @@ strong { color: var(--navy); }
 }
 .float-cta:hover { background: var(--navy); color: var(--white); }
 
+/* Sticky bottom action bar (phones only) */
+.mobile-bar {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0;
+  z-index: 55;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  gap: 10px;
+  box-shadow: 0 -6px 20px rgba(11,31,58,0.10);
+}
+.mobile-bar .btn { padding: 12px 10px; font-size: 0.86rem; white-space: nowrap; }
+.mobile-bar .btn--outline { flex: 0 0 auto; }
+.mobile-bar .btn--gold { flex: 1; }
+
 /* ----- Responsive ----------------------------------------------------- */
 @media (max-width: 1400px) {
   .brand-name { font-size: 1.05rem; }
@@ -786,7 +804,6 @@ strong { color: var(--navy); }
   .topbar .tagline { display: none; }
   .nav-toggle { display: flex; }
   .header-cta { display: none; }
-  .mobile-call { display: block; }
   .nav {
     position: absolute; top: 100%; left: 0; right: 0;
     background: var(--white);
@@ -841,3 +858,108 @@ strong { color: var(--navy); }
 .form-error.show { display: block; }
 .form-error a { color: #7a1f1f; text-decoration: underline; }
 button[disabled].btn { opacity: .7; cursor: wait; }
+
+/* ----- Phone refinements ---------------------------------------------- */
+@media (max-width: 1060px) {
+  .topbar .tagline { display: none; }
+  .topbar ul { gap: 1rem; justify-content: center; }
+  .topbar li:nth-child(3) { display: none; }            /* address: shown in footer */
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; padding-bottom: 72px; }        /* room for the bottom action bar */
+  .mobile-bar { display: flex; }
+  .float-cta { display: none; }
+
+  .topbar { font-size: 0.8rem; }
+  .topbar li:nth-child(2) { display: none; }            /* email: keep the phone number */
+  .badge-strip { font-size: 0.74rem; padding: 7px 10px; line-height: 1.35; }
+  .site-header .container { min-height: 68px; }
+  .brand-logo { width: 46px; height: 46px; }
+  .brand-name { font-size: 0.98rem; line-height: 1.15; }
+  .brand-sub { display: none !important; }
+  .nav-toggle { width: 42px; height: 42px; }
+
+  .section { padding: 44px 0; }
+  .section-head { margin-bottom: 26px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.55rem; }
+  .lead { font-size: 1.02rem; }
+
+  .hero { padding: 40px 0 44px; }
+  .hero .container { gap: 32px; }
+  .hero h2 { font-size: 1.1rem; }
+  .hero p { font-size: 1rem; }
+  .hero .serving { font-size: 0.72rem; padding: 6px 12px; }
+  .hero .hero-actions { gap: 10px; }
+  .hero .hero-actions .btn { flex: 1 1 100%; }
+  .hero-quote-label { font-size: 1.15rem; }
+
+  .form-card { padding: 22px 18px; }
+  .form-card p.form-note { font-size: 0.86rem; }
+  .form-card p.form-disclaimer { font-size: 0.72rem; }
+  .field input, .field textarea { padding: 12px; font-size: 16px; }   /* 16px stops iOS zoom */
+
+  .section-head--tight { padding-top: 40px; margin-bottom: 20px; }
+  .feature { padding: 24px 20px; }
+  .feature-icon { width: 52px; height: 52px; margin-bottom: 12px; }
+  .feature p { font-size: 0.94rem; }
+
+  .about-grid { gap: 28px; }
+  .about-media .caption { left: 0; bottom: 0; right: 0; padding: 12px 16px; font-size: 0.95rem; }
+  .about-media .founder-img { border-radius: var(--radius) var(--radius) 0 0; }
+
+  /* services: compact rows instead of tall cards */
+  .service-grid { gap: 12px; }
+  .service-card { padding: 18px 18px 18px 64px; position: relative; }
+  .service-card .num { position: absolute; left: 18px; top: 16px; font-size: 1.5rem; margin: 0; }
+  .service-card h3 { font-size: 1.05rem; margin-bottom: 0.35em; }
+  .service-card p { font-size: 0.9rem; margin-bottom: 0.6em; }
+  .service-card .more { font-size: 0.78rem; }
+
+  .faq-q { font-size: 1.05rem; padding: 16px 48px 16px 0; }
+  .faq-q::after { width: 30px; height: 30px; }
+  .faq-a { font-size: 0.95rem; }
+
+  .cta-band { padding: 36px 0; }
+  .card-grid { gap: 16px; }
+  .post-body { padding: 18px 18px 20px; }
+
+  .logo-strip { padding: 32px 0; }
+  .logo-strip h2 { font-size: 1.1rem; margin-bottom: 16px; }
+  .logo-row--3 { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .affil { padding: 12px 10px; min-height: 80px; }
+  .affil img { max-height: 54px; }
+
+  .testi-grid { gap: 14px; }
+  .testi { padding: 22px 18px 18px; }
+
+  .contact-grid { gap: 22px; }
+  .contact-info { padding: 26px 20px; }
+  .contact-info .btn { display: block; margin: 10px 0 0; text-align: center; }
+
+  .page-title { padding: 40px 0 34px; }
+  .page-title h1 { font-size: 1.75rem; }
+  .breadcrumb { font-size: 0.76rem; }
+  .inner { padding: 40px 0; }
+  .inner-grid { gap: 32px; }
+  .content h2 { font-size: 1.35rem; }
+  .content .intro { font-size: 1.02rem; }
+  .side-card--newsletter { display: none; }               /* the page already has a form */
+  .founder-card { max-width: none; }
+  .founder-text blockquote { font-size: 1.1rem; padding-left: 16px; }
+
+  .value { grid-template-columns: 44px 1fr; gap: 12px; padding: 18px; }
+  .value .mark { width: 44px; height: 44px; font-size: 1.1rem; }
+  .serve-list li { padding: 16px 16px 16px 50px; }
+  .serve-list li::before { left: 16px; top: 15px; }
+  .resource { padding: 16px; gap: 14px; }
+
+  .footer-main { padding: 44px 0 28px; gap: 28px; }
+  .footer-brand .brand-logo--lg { width: 110px; height: 110px; }
+  .footer-legal { padding-bottom: 20px; }
+  .footer-legal .disclaimer { font-size: 0.76rem; }
+}
+@media (max-width: 380px) {
+  .brand-name { font-size: 0.9rem; }
+  .badge-strip { display: none; }
+}
