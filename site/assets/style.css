@@ -983,4 +983,5 @@ button[disabled].btn { opacity: .7; cursor: wait; }
 
 /* Service page photos: cropped to a wide frame, focus kept on the upper part of the image */
 .service-photo { aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; box-shadow: var(--shadow); }
+.service-photo--center { object-position: 50% 55%; }
 @media (max-width: 640px) { .service-photo { aspect-ratio: 4 / 5; } }
