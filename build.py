@@ -263,6 +263,7 @@ SERVICE_PHOTO = {
     "court-appointed-guardianship": ("service-court-appointed-guardianship.jpg", "Classical stone columns of a courthouse", "50% 30%"),
     "person-centered-advocacy": ("service-person-centered-advocacy.jpg", "A caregiver's hands gently supporting an older adult holding a cane", "50% 55%"),
     "healthcare-decision-support": ("service-healthcare-decision-support.jpg", "An older woman's hands held reassuringly by a caregiver standing behind her", "50% 50%"),
+    "estate-financial-guardianship": ("service-estate-financial-guardianship.jpg", "An older adult's hands protectively cupped around a small wooden house", "50% 50%"),
 }
 
 
