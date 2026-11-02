@@ -257,6 +257,19 @@ SERVICE_ALT = {
     "court-reporting-compliance": "Calendar deadline, report stack, clock and completed checklist",
     "professional-collaboration": "Handshake between professionals with dialogue bubbles",
 }
+# Services that have a real photo instead of the drawn illustration: slug -> (file, alt text)
+SERVICE_PHOTO = {
+    "court-appointed-guardianship": ("service-court-appointed-guardianship.jpg", "Classical stone columns of a courthouse"),
+}
+
+
+def service_image(slug):
+    if slug in SERVICE_PHOTO:
+        f, alt = SERVICE_PHOTO[slug]
+        return f'<img class="illus service-photo" src="assets/images/{f}" alt="{html.escape(alt)}" loading="lazy" decoding="async">'
+    return illus('service-' + slug, SERVICE_ALT[slug], 'illus--wide')
+
+
 VALUE_ICONS = ["value-dignity", "value-rights", "value-ethics", "value-continuity", "value-independence", "value-accountability"]
 
 
@@ -891,7 +904,7 @@ def build_service_pages():
         {paragraphs}
         <div class="inline-form">{form(heading="Request a Consultation", note="Tell us about the situation and we will follow up to discuss whether our services may be an appropriate fit.", uid="s")}</div>
 
-        {illus('service-' + s['slug'], SERVICE_ALT[s['slug']], 'illus--wide')}
+        {service_image(s['slug'])}
 
         <h2>What This Service Includes</h2>
         <ul class="check-list">{includes}</ul>
