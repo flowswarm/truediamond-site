@@ -265,6 +265,7 @@ SERVICE_PHOTO = {
     "healthcare-decision-support": ("service-healthcare-decision-support.jpg", "An older woman's hands held reassuringly by a caregiver standing behind her", "50% 50%"),
     "estate-financial-guardianship": ("service-estate-financial-guardianship.jpg", "An older adult's hands protectively cupped around a small wooden house", "50% 50%"),
     "care-coordination": ("service-care-coordination.jpg", "A hand pulling a file folder from an organized records drawer", "50% 50%"),
+    "court-reporting-compliance": ("service-court-reporting-compliance.jpg", "A wooden gavel resting on an open law book", "50% 50%"),
 }
 
 
