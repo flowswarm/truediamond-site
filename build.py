@@ -755,7 +755,7 @@ def build_about():
         <p class="intro">At True Diamond Life Care Group, our mission is to safeguard dignity, protect individual rights, and champion the well-being of those entrusted to our care through compassionate advocacy, empathetic service, and unwavering integrity.</p>
         <p>We are committed to ensuring that every individual is treated with respect, every voice is valued, and every decision reflects the person's best interests, unique needs, and inherent right to dignity.</p>
 
-        {illus('about-mission', 'An individual held safe within a diamond-shaped shield, supported by open hands', 'illus--wide')}
+        <img class="illus illus--wide" src="assets/images/about-photo.jpg" alt="Older adults sharing a joyful moment together at a table" loading="lazy" decoding="async">
 
         <h2>Our Philosophy</h2>
         <p>We believe guardianship is more than a professional responsibility—it's a commitment to humanity, trust, and the protection of those who may be unable to fully advocate for themselves.</p>
