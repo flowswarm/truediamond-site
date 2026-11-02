@@ -963,3 +963,16 @@ button[disabled].btn { opacity: .7; cursor: wait; }
   .brand-name { font-size: 0.9rem; }
   .badge-strip { display: none; }
 }
+
+/* ----- Google Maps embed ---------------------------------------------- */
+.gmap { border-radius: 10px; overflow: hidden; background: var(--ivory-deep); }
+.gmap iframe { display: block; width: 100%; }
+.gmap-links { font-size: 0.82rem; padding: 10px 14px; background: var(--white); border-top: 1px solid var(--line); }
+.gmap-links a { font-weight: 700; color: var(--navy); }
+.gmap-links a:hover { color: var(--gold-deep); }
+.gmap--card { box-shadow: var(--shadow); }
+.gmap--footer { border: 1px solid rgba(201,168,76,0.4); }
+.gmap--footer .gmap-links { background: var(--navy); border-top-color: rgba(201,168,76,0.4); }
+.gmap--footer .gmap-links a { color: var(--gold-soft); }
+.gmap--footer .gmap-links a:hover { color: var(--white); }
+@media (max-width: 640px) { .gmap--card iframe { height: 280px; } }

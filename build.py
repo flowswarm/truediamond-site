@@ -260,6 +260,20 @@ SERVICE_ALT = {
 VALUE_ICONS = ["value-dignity", "value-rights", "value-ethics", "value-continuity", "value-independence", "value-accountability"]
 
 
+MAP_QUERY = "600 N Jackson Street, Media, PA 19063"
+MAP_EMBED = "https://maps.google.com/maps?q=" + MAP_QUERY.replace(" ", "+") + "&z=15&output=embed"
+MAP_LINK = "https://www.google.com/maps/search/?api=1&query=" + MAP_QUERY.replace(" ", "+")
+MAP_DIRECTIONS = "https://www.google.com/maps/dir/?api=1&destination=" + MAP_QUERY.replace(" ", "+")
+
+
+def google_map(extra="", height=260):
+    """Live Google Maps embed of the office address (no API key needed) with a directions link."""
+    return f"""<div class="gmap {extra}">
+  <iframe src="{MAP_EMBED}" width="100%" height="{height}" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Map of {MAP_QUERY}"></iframe>
+  <div class="gmap-links"><a href="{MAP_DIRECTIONS}" target="_blank" rel="noopener">Get Directions</a> · <a href="{MAP_LINK}" target="_blank" rel="noopener">Open in Google Maps</a></div>
+</div>"""
+
+
 def founder_img(extra=""):
     return (f'<img class="founder-img {extra}" src="assets/images/founder.jpg" '
             f'srcset="assets/images/founder-800.jpg 800w, assets/images/founder.jpg 1374w" '
@@ -475,7 +489,7 @@ def footer():
       </div>
       <div class="footer-map">
         <h4>Visit Us</h4>
-        {illus('footer-map', 'Map of Pennsylvania and Delaware with a pin at Media, PA', 'illus--map')}
+        {google_map('gmap--footer', 220)}
         <p class="addr">{BIZ['name']}<br>{BIZ['address']}</p>
       </div>
     </div>
@@ -999,7 +1013,7 @@ def build_contact():
 <section class="section section--ivory">
   <div class="container">
     <div class="about-grid">
-      <div class="about-media">{illus('contact-location', 'Map of Pennsylvania and Delaware with a location pin at Media, PA, envelope and phone', 'illus--wide')}</div>
+      <div class="about-media">{google_map('gmap--card', 380)}</div>
       <div class="about-text">
         <span class="eyebrow">Still have questions?</span>
         <h2>We're Here to Help</h2>
