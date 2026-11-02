@@ -976,3 +976,7 @@ button[disabled].btn { opacity: .7; cursor: wait; }
 .gmap--footer .gmap-links a { color: var(--gold-soft); }
 .gmap--footer .gmap-links a:hover { color: var(--white); }
 @media (max-width: 640px) { .gmap--card iframe { height: 280px; } }
+
+/* About page photo: portrait source shown as a wide crop centred on the hands */
+.about-photo { aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 62%; box-shadow: var(--shadow); }
+@media (max-width: 640px) { .about-photo { aspect-ratio: 4 / 5; object-position: 50% 60%; } }
